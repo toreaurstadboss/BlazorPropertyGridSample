@@ -1,12 +1,16 @@
 ﻿using Microsoft.AspNetCore.Components;
+using Microsoft.AspNetCore.Components.Web;
+using Microsoft.JSInterop;
 using System.Collections.Generic;
 using System.Reflection;
-using Microsoft.AspNetCore.Mvc;
 
 namespace BlazorFormsTestRound.Components
 {
     public class PropertyGridBase : ComponentBase
     {
+
+        [Inject]
+        public IJSRuntime JsRuntime { get; set; }
 
         [Parameter] public object DataContext { get; set; }
 
@@ -85,6 +89,11 @@ namespace BlazorFormsTestRound.Components
             }
 
             return propertyNode;
+        }
+
+        protected void toggleExpandButton(MouseEventArgs e, string buttonId)
+        {
+            JsRuntime.InvokeVoidAsync("toggleExpandButton", buttonId);
         }
 
         private string TrimFullPropertyPath(string fullpropertypath)
