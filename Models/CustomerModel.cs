@@ -9,7 +9,7 @@ namespace BlazorFormsTestRound.Models
             Address = new AddressInfo();
         }
         [Required]
-        [StringLength(10, ErrorMessage = "Name is too long.")]
+        [StringLength(40, ErrorMessage = "Name is too long.")]
         public string Name { get; set; }
 
         public AddressInfo Address { get; set; }
