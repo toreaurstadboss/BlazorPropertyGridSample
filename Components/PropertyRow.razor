@@ -24,7 +24,7 @@
     {
 <tr>
     <td>
-        <span>@propertyInfoAtLevel.PropertyName</span>
+        <span title="@propertyInfoAtLevel.FullPropertyPath" class="font-weight-bold">@propertyInfoAtLevel.PropertyName</span>
     </td>
     <td>
         <span>@propertyInfoAtLevel.PropertyValue</span>
@@ -41,7 +41,7 @@
         collapseOrNotCssClass += " depth" + Depth;
 
 
- var currentNestedDiv = propertyInfoAtLevel.PropertyName;
+ var currentNestedDiv = "collapsingdiv_" + propertyInfoAtLevel.PropertyName;
 
  //must be a nested class property
 <tr>

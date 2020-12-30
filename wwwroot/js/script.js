@@ -2,6 +2,8 @@
     //debugger
     $("#" + elementId).toggleClass("fa-plus");
     $("#" + elementId).toggleClass("fa-minus");
-    //$("#" + elementId).toggleClass("fa-minus-circle");
+    $("#" + elementId).removeClass("collapse");
+
+    $("#" + elementId).toggleClass("fa-minus-circle");
 
 }
