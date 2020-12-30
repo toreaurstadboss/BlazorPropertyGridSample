@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System;
+using System.ComponentModel.DataAnnotations;
 
 namespace BlazorFormsTestRound.Models
 {
@@ -6,6 +7,7 @@ namespace BlazorFormsTestRound.Models
     {
         public CustomerModel()
         {
+            EnrollementDate = DateTime.Today;
             Address = new AddressInfo();
         }
         [Required]
@@ -18,6 +20,8 @@ namespace BlazorFormsTestRound.Models
         public int Age { get; set; }
 
         public string City { get; set; }
+
+        public DateTime EnrollementDate { get; set; }
 
     }
 
